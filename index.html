@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    D&D Statistics Challenge
+  </title>
+  <link rel="stylesheet" href=""https://use.fontawesome.com/releases/v5.6.1/css/all.css"">
+  <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<html>
+<body>
+    <div id="openPage">
+      <h1 class="highlight">Welcome to an escape room adventure</h1>
+      <section id="introduction">
+        <img src="https://media.giphy.com/media/3HEGGI98bwvWeXL9Qy/giphy.gif" alt="Lets dig into it" width='30%'>
+        <p>This is the second adventure in Statistics. The aim is to use the
+          skills you have developed in Further Mathematics to complete the next D&D
+          inspired mission. Before you can, you need to have
+          mastered both the uni variate and the bi variate components of the course.</p>
+      </section>
+      <button id="begin">
+        Click here to start the adventure
+      </button>
+    </div>
+    <div id="puzzleOne" class="hide">
+      <h1 class="highlight">Escape "Room" One - Levelling up</h1>
+
+      <div id=character_descriptions>
+        <section id="droid">
+          <img src="img/droid.png" alt="Droid Character">
+          <p>Name – Dis Tress<br>Age – 100 years<br>
+            Shoe size - 7<br>AC = 16<br>HP=8<br>Droid deals 2 HP damage.</p>
+        </section>
+        <section id="bard">
+          <img src="img/Bard.jpg" alt="Bard Character">
+          <p>Name – Lesley Lark<br>Age – 39 years<br>Shoe size - 10<br>
+            AC=16<br>HP=9<br>Bard deals 1 HP damage.</p>
+        </section>
+        <section id="ranger">
+          <img src="img/Ranger.png" alt="Ranger Character">
+          <p>Name – Steel Gaze<br>Age – 25 years<br>Shoe size – 8.5<br>
+            AC=15<br>HP=8<br>Ranger deals 2 HP damage.</p>
+        </section>
+		    <section id="wizard">
+          <img src="img/Wizard.jpg" alt="Wizard Character">
+          <p>Name – Flame Whisperer<br>Age – 402 years<br>Shoe size – 13.5<br>
+            AC=16<br>HP=8<br>Wizard deals 1 HP damage.</p>
+        </section>
+      </div>
+
+      <h2>Upon the completion of the mushroom grove mission, the characters were
+        awarded 2 experience points. This means that they can level up before
+        they undertake any new missions.<br>
+        The above cards introduce them to you and give you some basic stats
+        for each. You are told their name, age and shoe size etc.<br>
+        It is the other stats that need to change. Their armour class (AC) may
+        increase and their hit points (HP) may also increase. With only two
+        experience points their damage dealt will be unchanged.<br>
+        <em><a href="img/ACandHPdata.png" target="_blank">Click</a></em> here to see
+        how the number of experience points gained will influence the character
+        traits.<br>
+        Use your knowledge of Further Mathematics terminology to answer the
+        following questions in order to proceed.<br>
+      </h2>
+
+      <div id="rangeInputs" class="inputs">
+        <section id="questionOne">
+          <p style="width: 100%;"><strong>In this example what is the
+            explanitory variable? </strong></p>
+          <input id="explanitoryAnswer">
+        </section>
+        <section id="questionTwo">
+          <p style="width: 100%;"><strong>When trying to determine the armour
+            class, what is the response variable?: </strong></p>
+          <input id="responseOneAnswer">
+        </section>
+        <section id="questionThree">
+          <p style="width: 100%;"><strong>When trying to determine the number
+            of hit points a charater has, what is the response variable?: </strong></p>
+          <input id="responseTwoAnswer">
+        </section>
+      </div>
+
+  <section id="finishPuzzleOne" class="hide">
+    <p>What type of graph would you use if
+       you wanted "Experience Points" on the x-axis and "Armour Class" on the y-axis?: </p>
+      Select the graph:
+      <select id="myList" onchange="onAnswerOne()">
+        <option>Select a graph</option>
+        <option>Scatterplot</option>
+        <option>Histogram</option>
+        <option>Box-and-whisker plot</option>
+        <option>Bar chart</option>
+        <option>Pie chart</option>
+      </select>
+    <h1 id="resultOne">...</h1>
+  </section>
+      <section id='congratesMoveOnPuzzleOne' class='hide'>
+        <button id= 'moveToPuzzleTwo'>
+          Well Done! Click here to start the adventure.
+        </button>
+      </section>
+    </div>
+
+
+    <div id="puzzleTwo" class="hide">
+      <h1 class="highlight">Room Two - Analyse the battle ahead and choose your leader.</h1>
+      <div id=character_descriptions>
+        <section id="droid">
+          <img src="img/droid.png" alt="Droid Character">
+          <p>Name – Dis Tress<br>Age – 100 years<br>
+            Shoe size - 7<br>AC = 16<br>HP=8<br>Droid deals 2 HP damage.</p>
+        </section>
+        <section id="bard">
+          <img src="img/Bard.jpg" alt="Bard Character">
+          <p>Name – Lesley Lark<br>Age – 39 years<br>Shoe size - 10<br>
+            AC=16<br>HP=9<br>Bard deals 1 HP damage.</p>
+        </section>
+        <section id="ranger">
+          <img src="img/Ranger.png" alt="Ranger Character">
+          <p>Name – Steel Gaze<br>Age – 25 years<br>Shoe size – 8.5<br>
+            AC=15<br>HP=8<br>Ranger deals 2 HP damage.</p>
+        </section>
+        <section id="wizard">
+          <img src="img/Wizard.jpg" alt="Wizard Character">
+          <p>Name – Flame Whisperer<br>Age – 402 years<br>Shoe size – 13.5<br>
+            AC=16<br>HP=9<br>Wizard deals 1 HP damage.</p>
+        </section>
+      </div>
+      <div id=card_descriptions>
+        <section id="header_cards">
+          <img src="img/sleeping_dragon.jpg" alt="sleeping dragon - stelth required.">
+        </section>
+        <section id = 'linkToGraphs'>
+          <img src="img/royal_seal.jpg" alt="Letter from the king.">
+          <p>The party, who have now all been levelled up, receive a dispatch
+            from the King of Strathweyah. His Daughter, Princess Crysalot, has
+            been kidnapped by his adversary from the neighbouring kingdom.<br>
+            Steel Gaze immediately embarked on a scouting mission and found that
+            the princess is being held in a dungeon guarded by a fierce dragon.
+            Steel brings back a drawing of the dragon and you immediately start
+            researching the breed.<br>
+            You find a reference in an ancient scroll that tells the tale of a
+            past quest. It too involved this type of dragon. The scroll eludes to
+            the fact that these dragons are only active when the temperature
+            exceeds 8.0 <sup>o</sup>C. Any colder than that and a stealthy
+            warrior can sneak past.
+            <br>Table 1 below shows the day number and the minimum temperature,
+            in degrees Celsius, for the 15 consecutive days before today.<br></p>
+          <table>
+            <tr>
+              <th>Day Number</th>
+              <th>Minimum Temperature (<sup>o</sup>C)</th>
+            </tr>
+            <tr>
+              <td class="Day Number">1</td>
+              <td>12.7</td>
+            </tr>
+            <tr>
+              <td class="Day Number">2</td>
+              <td>11.8</td>
+            </tr>
+            <tr>
+              <td class="Day Number">3</td>
+              <td>10.7</td>
+            </tr>
+            <tr>
+              <td class="Day Number">4</td>
+              <td>9.0</td>
+            </tr>
+            <tr>
+              <td class="Day Number">5</td>
+              <td>6.0</td>
+            </tr>
+            <tr>
+              <td class="Day Number">6</td>
+              <td>7.0</td>
+            </tr>
+            <tr>
+              <td class="Day Number">7</td>
+              <td>4.1</td>
+            </tr>
+            <tr>
+              <td class="Day Number">8</td>
+              <td>4.8</td>
+            </tr>
+            <tr>
+              <td class="Day Number">9</td>
+              <td>9.2</td>
+            </tr>
+            <tr>
+              <td class="Day Number">10</td>
+              <td>6.7</td>
+            </tr>
+            <tr>
+              <td class="Day Number">11</td>
+              <td>7.5</td>
+            </tr>
+            <tr>
+              <td class="Day Number">12</td>
+              <td>8.0</td>
+            </tr>
+            <tr>
+              <td class="Day Number">13</td>
+              <td>8.6</td>
+            </tr>
+            <tr>
+              <td class="Day Number">14</td>
+              <td>9.8</td>
+            </tr>
+            <tr>
+              <td class="Day Number">15</td>
+              <td>7.7</td>
+            </tr>
+          </table>
+        </section>
+      </div>
+
+      <div id="optionInputs" class="inputs">
+        <section id="questionOne">
+          <p style="width: 100%;"><strong>Which of the two variables in this
+            data set is an ordinal variable? </strong></p>
+          <input id="ordinalAnswer">
+        </section>
+
+        <section id="questionTwo">
+          <p>The incomplete ordered stem plot below has been constructed using
+            the data values for days 1 to 10.</p>
+            <table>
+              <h2>
+                <p>Minimum Temperature (<sup>o</sup>C)  </p>
+                <p>  key: 4|1 = 4.1 and n=15</p>
+              </h2>
+              <tr>
+                <td class="Minimum Temperature">4</td>
+                <td>1     8</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">6</td>
+                <td>0     7</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">7</td>
+                <td>0     _     _</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">8</td>
+                <td>_     _</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">9</td>
+                <td>0     2     _</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">10</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">11</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td class="Minimum Temperature">12</td>
+                <td>7</td>
+              </tr>
+            </table>
+          <p style="width: 100%;"><strong>Complete the stem plot above by adding
+            the data values for days 11 to 15 (Type answers here separated by a
+            comma and a space eg. 1, 2, 3, 4, 5): </strong></p>
+          <input id="stemAndLeafPlotAnswer">
+        </section>
+        <section id="questionThree">
+          <p style="width: 100%;"><strong>Use this stem plot to determine the
+            value of the first quartile (Q1)?: </strong></p>
+          <input id="quartileOneAnswer">
+        </section>
+        <section id="questionFour">
+          <p style="width: 100%;"><strong>Use this stem plot to determine the
+             percentage of days with a minimum temperature lower than 9.8°C
+             (you must include a percentage sign): </strong></p>
+             <input id="questionFourAnswer">
+        </section>
+      </div>
+
+      <section id=puzzleTwoBResults class="hide">
+        <h2><p><em>Great work on those questions! 100% correct</em><br>
+          If there is less than a 25% chance that the dragon will be asleep
+          upon your arrival you should choose the Ranger, Steel Gaze,  to lead. If there is a
+          50% chance that the dragon will be asleep choose the droid, Dis Tress. If there is
+          a greater than 50% chance that the dragon will be asleep choose the bard, Lesley Lark.
+          If the chance of the dragon being asleep falls in the top 25% you should
+          choose the Wizard, Flame Whisperer.</p>
+        </h2>
+        <section id="finishPuzzleTwoB" class='hide'>
+          <input type="radio" name="choice" value="Steel Gaze"> Steel Gaze
+          <input type="radio" name="choice" value="Lesley Lark"> Lesley Lark
+          <input type="radio" name="choice" value="Flame Whisperer"> Flame Whisperer
+          <input type="radio" name="choice" value="Dis Tress"> Dis Tress
+        </section>
+        <button id='submitAnswerTwoBButton' onclick="submitAnswerTwoB"> Submit Answer </button>
+      </section>
+      <section onclick='onCompletionPuzzleTwoB' id='finishPuzzleTwoBButton' class='hide'>
+        <button id="completePuzzleTwoBButton" class='hide'>
+            Correct Answer! Click here to enter the forest
+        </button>
+      </section>
+    </div>
+
+    <div id="puzzleThree" class="hide">
+      <h1 class="highlight">CONGRATULATIONS! You've made it to 'Room Three' -
+        Let the journey begin.</h1>
+      <h2>Your team moves out and by nightfall they have made it to the gates of the neighbouring village.<br>
+        You instruct them to find shelter in the local Inn. Here they meet "Twominnoodles" a local drunk.
+        They sit with him and buy him drinks in hope that he will divulge information pertaining to the princess.
+        They have success and discover that even if the dragon is awake it is also restricted as to when it can breathe flame.
+        The humidity must be lower than 60%.<br>
+        Dis Tress messages you with this information and you pull up humidity readings from the past fifteen days;<br>
+        <img src="img/Inn.jpg" style="width: 30%; height: 30%"
+        alt="The Inn"><br>
+        <img src="img/humidity.png" style="width: 30%; height: 30%"
+        alt="Humidity Data"><br>
+      </h2>
+        <em>Can you make this battle safer?</em><br>
+        A least squares line is to be fitted to the data with the aim of predicting the relative humidity at 3 pm
+        from the relative humidity at 9 am. This way you can determine if it is likely
+        the dragon will be able to produce fire tomorrow afternoon based on tomorrow mornings humidity.
+      </h2>
+      <div id='heroRoll'>
+        <div id=puzzle3AQuestion>
+          <p><em>Use your CAS calculator.</em><br>
+            <button id="finishPuzzleThree">
+              Determine the values of the intercept (a) and the slope (b) of this least squares line.
+	             Round both values to three significant figures. Input them below separated by a comma and a space.
+            </button>
+          </p>
+          <input id="puzzleThreeAInput" type="text" autocomplete="off">
+        </div>
+        <h1 id="resultThree">...</h1>
+
+        <div id=puzzleThreeBtn class=hide>
+          <div id=puzzle3BQuestion>
+          <p>Now you have determined that the equation that can be used to predict
+            the 3pm humidity based on the 9am humidity is:<br>
+            <strong><em>humidity at 3pm = -1.26 + 0.765 × humidity 9am<em></strong><br>
+            <button id="finishPuzzleThreeB">
+              The next morning at 9am the team measures the humidity to be 65%.
+              What is the predicted humidity at 3pm to two decimal places?
+            </button>
+          </p>
+          <input id="puzzleThreeBInput" type="text" autocomplete="off">
+          </div>
+
+          <div id=puzzleThreeBBtn class=hide>
+            <p>You have determined from this that today is an appropriate day
+              to attack. You message the team and they begin to assemble their
+              weapons.<br>
+              They rest while they wait for 3pm to roll around. The bard, Lesley
+              Lark, entertains them with a relaxing yet inspiring <a href="song.mid" target="_blank">melody</a>.</p>
+          <button id="finishPuzzleThreePartBButton">
+            Good decision! Click here to progress to the next "room"
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id='puzzleFour' class="hide" style="background-image: url('img/dungeon_background.jpg');">
+      <h1 class="highlight">"Room" Four - Attack the dragon!.</h1>
+      <div id=activity>
+        <section id = 'activityOne'>
+          <img src="img/yawning.png" alt="Sleepy Dragon">
+          <p><em>The team stealthily makes their way to the dungeon of the main castle!</em><br>
+            While they find the dragon awake, it is very sleepy and they have
+            time to devise an attack plan.<br>
+            In this half awake state it is going to take 10 hits to kill him.
+          </p>
+        </section>
+        <section id='activityTwo'>
+          <p>The Ranger, Steel Gaze, has an adjustable long bow he can use and
+          the Droid, Dis Tress, has a long sword.<br>
+          The Ranger asks you to assist him in setting his bow. He knows that
+          the atmospheric pressure influences what tension he should adjust to
+          in order to penetrate the chest of the dragon.<br>
+          The scatterplot below shows the required elastic potential energy (tension) of a longbow
+          in joules, plotted against the atmospheric pressure in
+          hectopascals for the last 23 days.<br>
+          <img src="img/scatterplot.png" alt="weapon data" width=80%>
+          </p>
+        </section>
+      </div>
+      <section id=puzzleFourQuestions>
+        <h2>A least squares line has been fitted to the scatterplot as shown.<br>
+          The equation of this line is:<br>
+          elastic potential energy of longbow (J) = 111.4 + 0.8894 × atmospheric pressure.<br>
+          You know that the current atmospheric pressure is 1022 hectopascals.
+          What tension (to the nearest joule) should Steel set the bow to.<br>
+        </h2>
+
+        <button id="finishPuzzleFourPartOne">
+          Longbow's elestic potential energy (in joules) required in order to penetrate the dragons chest
+        </button>
+        <input id="puzzleFourInputPartOne" type="text" autocomplete="off">
+        <br>
+        <button id="finishPuzzleFourPartTwo" margin='auto'>
+          Is the prediction an example of extrapolation or interpolation?
+        </button>
+        <br>
+        <input id="puzzleFourInputPartTwo" type="text" autocomplete="off">
+        <br>
+        <button id='checkPuzzleFourAnswers' class='attemptButton'>
+          Try
+        </button>
+        <h1 id="resultFour">
+          ...
+        </h1>
+
+        <div id=puzzleFourBtn class=hide>
+          <button id="finishPuzzleFourButton" class='hide'>
+            <img src="https://media.giphy.com/media/EMm31ROmLJtEk/giphy.gif" alt="arrow">
+            Steel follows your instructions and shoots three arrows in
+            quick succession. The dragon takes 5 hit points damage. <strong>Click here to move on</strong>.
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div id='puzzleFive' class='hide' style="background-image: url('img/dungeon_background.jpg');">
+      <h1 class="highlight">"Room" Five - SAVE THE PRINCESS!</h1>
+      <div id=dragon_death>
+        <section id="trapped_princess">
+          <img src="img/princess.jpg" alt="Trapped princess">
+          <p>The dragon is hurt but still ready to fight. He takes a massive
+            inhalation of air and blows at the team. Thank goodness he is
+            unable to produce fire at this humidity! Lesley Lark gets the fright
+            of his life and trips backwards into Dis Tress's upraised sword.
+            He is dealt 2 hit points damage. Unfortunately, he also knocked Dis
+            over and she is now unable to attack.<br>
+          </p>
+        </section>
+      </div>
+      <section id="fireball">
+        <h2><em>The conjuring</em><br>
+          <img id="fireball_image" src="img/fireball.png" alt="The fireball">
+          <p>The wizard, Flame Whisperer, steps forward. He can draw on Gazes'
+          residual energy from his previous arrow strick to launch his own fire
+          ball. Remember Steel set the bow to 1020 J.</p>
+        </h2>
+      </section>
+      <section id="puzzleFiveButtons">
+      <button id="finishPuzzleFivePartOne">
+        Determine the residual elastic potential energy when the actual
+        elastic potential energy required at this time was 1017 joules.
+      </button>
+      <input id="puzzleFiveInputPartOne" type="text" autocomplete="off">
+      <button id="finishPuzzleFivePartTwo">
+        The conjured fireball is launched through the air and floors the
+        dragon delivering -2xresidual in damage. Is the dragon dead (Y/N)?
+      </button>
+      <input id="puzzleFiveInputPartTwo" type="text" autocomplete="off">
+      <br>
+      <button id='checkPuzzleFiveAnswers' class='attemptButton'>
+        Try
+      </button>
+    </section>
+      <h1 id="resultFive">
+        ...
+      </h1>
+
+      <div id="finishPuzzleFive" class='hide'>
+        <button id="finishPuzzleFiveButton">
+          Well Done!<br>
+          You have freed the princess! The King and Queen are very happy to have her home.<br>
+          <em>The team gains 4 more experience points.</em>
+        </button>
+        <br>
+        <section id='celebration'>
+        <img src="https://media.giphy.com/media/jQfzhN2k6Qd6o/giphy.gif" alt="Happy royal family">
+        </section>
+      </div>
+  </div>
+    <script src="script.js"></script>
+  </body>
+</html>
