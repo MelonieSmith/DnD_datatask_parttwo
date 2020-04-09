@@ -69,6 +69,7 @@ th  {
 td  {
   border: 1px solid navy;
   padding: 1%;
+  width: auto;
 }
 
 
@@ -82,7 +83,7 @@ td  {
   color: black;
   font-weight: bold;
   font-size: 20px;
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
